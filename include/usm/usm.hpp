@@ -4,6 +4,9 @@
 
 #include "page.hpp"
 #include "types.hpp"
+#include "media.hpp"
+#include "chunk.hpp"
+#include "io.hpp"
 
 #include <cstdint>
 #include <filesystem>

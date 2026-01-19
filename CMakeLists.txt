@@ -10,6 +10,10 @@ add_library(usm
   src/chunk.cpp
   src/usm.cpp
   src/media.cpp
+        include/usm/codecs/ivf_vp9.hpp
+        include/usm/codecs/h264.hpp
+        include/usm/codecs/hca.hpp
+        include/usm/io.hpp
 )
 
 target_include_directories(usm PUBLIC include)

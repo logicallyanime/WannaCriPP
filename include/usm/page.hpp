@@ -51,4 +51,28 @@ namespace usm {
     std::vector<int> keyframes_from_seek_pages(
         const std::optional<std::vector<UsmPage>>& seek_pages);
 
+    namespace Video {
+        UsmPage create_crid(std::string filename, int32_t filesize,
+                               int32_t max_size, int16_t channel_number,
+                               int32_t bitrate,
+                               std::optional<int32_t> fmtver);
+
+        UsmPage create_header(int32_t width, int32_t height,
+                                 int32_t total_frames, int32_t num_keyframes,
+                                 double fps, int32_t max_packed_size,
+                                 int8_t mpeg_codec, int8_t mpeg_dcprec);
+    }
+
+    namespace Audio {
+        UsmPage create_crid(std::string filename, int32_t filesize,
+                               int16_t channel_number, int32_t minbuf,
+                               int32_t avbps, std::optional<int32_t> fmtver);
+        UsmPage create_header(int32_t sample_rate,
+                                int32_t num_channels, int32_t metadata_count,
+                                int32_t metadata_size, int32_t ixsize);
+    }
+
+    UsmPage create_crid(std::string usm_filename, int32_t total_filesize,
+                             int32_t minbuf, int32_t avbps,
+                             std::optional<int32_t> fmtver);
 }  // namespace usm
